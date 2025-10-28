@@ -73,7 +73,7 @@ docker load -i env-embedded-rust-workshop-<ARCH>.tar
 However, if you need to build the image from scratch, open a command prompt (bash, zsh, PowerShell), navigate to this directory, and build the Docker image:
 
 ```sh
-docker build -t env-embedded-rust-workshop  .
+docker build --build-arg TARGETARCH=<ARCH> -t env-embedded-rust-workshop  .
 ```
 
 **IMPORTANT**: Files in the `workspace/` folder will be saved to your host computer. Everything else will be deleted when you exit out of the Docker container.
