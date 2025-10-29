@@ -98,6 +98,14 @@ This will open an interactive terminal that you can use to compile your code and
 
 If you want to install Rust locally on your computer, simply follow the [directions on the Rust site](https://rust-lang.org/learn/get-started/).
 
+You will need some tools to help with building Rust programs for embedded targets. Run:
+
+```sh
+rustup target add thumbv8m.main-none-eabihf
+rustup component add clippy rustfmt llvm-tools
+cargo install cargo-binutils flip-link
+```
+
 You will also need *picotool* to convert ELF binaries into UF2 files, and installing it can be a little tricky. You have a few ways to install picotool:
 
 1. Try installing it directly from the binary built for your OS [downloaded from here](https://github.com/raspberrypi/pico-sdk-tools/reeases/tag/v2.2.0-3) (look for `picotool-2.2.0-a4-<YOUR_OS>`)
